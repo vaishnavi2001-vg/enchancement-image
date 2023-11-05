@@ -15,7 +15,13 @@ import numpy as np
 image = cv2.imread('image5.jpeg')
 
 # Define the height and width of the image
-height, width = image.shape[:2]
+# height, width = image.shape[:2]
+if image is not None and len(image.shape) >= 2:
+    height, width = image.shape[:2]
+else:
+    # Handle the case where image is None or doesn't have the expected shape
+    st.error("Failed to load the image or unexpected image shape.")
+
 
 # Define the transformation matrix for different affine transformations
 # 1. Translation
