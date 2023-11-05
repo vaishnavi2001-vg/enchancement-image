@@ -13,6 +13,21 @@ def main():
         st.error("Failed to load the image or unexpected image shape.")
         return
 
+
+    # Define the transformation matrix for different affine transformations
+# 1. Translation
+    translation_matrix = np.float32([[1, 0, 50], [0, 1, 30]])  # Translate 50 pixels right and 30 pixels down
+
+# 2. Rotation
+    rotation_matrix = cv2.getRotationMatrix2D((width / 2, height / 2), 45, 1)  # Rotate by 45 degrees
+
+# 3. Scaling
+    scaling_matrix = np.float32([[0.5, 0, 0], [0, 2, 0]])  # Scale by 50% horizontally and 200% vertically
+
+# 4. Shearing
+    shearing_matrix = np.float32([[1, 0.2, 0], [0.2, 1, 0]])  # Shear horizontally by 20% and vertically by 20%
+
+    
     # Apply the affine transformations
     translated_image = cv2.warpAffine(image, translation_matrix, (width, height))
     rotated_image = cv2.warpAffine(image, rotation_matrix, (width, height))
