@@ -9,7 +9,7 @@ Original file is located at
 
 import cv2
 import numpy as np
-from google.colab.patches import cv2_imshow
+# from google.colab.patches import cv2_imshow
 
 # Load an image
 image = cv2.imread('image5.jpeg')
