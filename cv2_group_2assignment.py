@@ -162,5 +162,11 @@ def main():
     corrected_image = corrected_image.balanceWhite(image)
     st.image(corrected_image, caption='Color Balance Adjustment', use_column_width=True)
 
+   st.image(enhanced_image, caption='Contrast Enhancement (Histogram Equalization)', use_column_width=True)                                
+   st.image(enhanced_image, caption='Brightness and Contrast Adjustment', use_column_width=True)
+   st.image(image, caption='Smoothing and Blurring (Gaussian Blur)', use_column_width=True)
+   st.image(sharpened_image, caption='Sharpening (Unsharp Masking)', use_column_width=True)
+   st.image(corrected_image, caption='Color Balance Adjustment', use_column_width=True) 
+
 if __name__ == '__main__':
     main()
