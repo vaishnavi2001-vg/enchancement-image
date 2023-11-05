@@ -135,12 +135,12 @@ def main():
     # You can continue to display other images similarly.
     # Load a grayscale image
     # Load a grayscale image and apply contrast enhancement
-    image = cv2.imread('image5.jpeg', 0)  # Load a grayscale image
+    # image = cv2.imread('image5.jpeg', 0)  # Load a grayscale image
     enhanced_image = cv2.equalizeHist(image)
     st.image(enhanced_image, caption='Contrast Enhancement (Histogram Equalization)', use_column_width=True)
 
     # Load the original image again
-    image = cv2.imread('image5.jpeg')
+    # image = cv2.imread('image5.jpeg')
 
     alpha = 1.5  # Contrast control (1.0 means no change)
     beta = 30    # Brightness control (0 means no change)
