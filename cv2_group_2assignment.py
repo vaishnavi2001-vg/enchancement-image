@@ -3,15 +3,14 @@ import cv2
 import numpy as np
 
 def main():
-    # Load an image
-    image = cv2.imread('image5.jpeg')
+   # Load an image
+image = cv2.imread('image5.jpeg')
 
-    if image is not None and len(image.shape) >= 2:
-        height, width = image.shape[:2]
-    else:
-        # Handle the case where the image is None or doesn't have the expected shape
-        st.error("Failed to load the image or unexpected image shape.")
-        return
+if image is not None:
+    height, width = image.shape[:2]
+else:
+    st.error("Failed to load the image or unexpected image shape.")
+    st.stop()  # Stop the script if the image loading fails
 
 
     # Define the transformation matrix for different affine transformations
