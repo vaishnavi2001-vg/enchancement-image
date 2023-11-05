@@ -40,31 +40,31 @@ def main():
     st.image(scaled_image, caption='Scaled Image', use_column_width=True)
     st.image(sheared_image, caption='Sheared Image', use_column_width=True)
 
-    # Load a grayscale image and apply contrast enhancement
-    enhanced_image = cv2.equalizeHist(image)
-    st.image(enhanced_image, caption='Contrast Enhancement (Histogram Equalization)', use_column_width=True)
+    # # Load a grayscale image and apply contrast enhancement
+    # enhanced_image = cv2.equalizeHist(image)
+    # st.image(enhanced_image, caption='Contrast Enhancement (Histogram Equalization)', use_column_width=True)
 
-    # Apply brightness and contrast adjustment
-    alpha = 1.5  # Contrast control (1.0 means no change)
-    beta = 30    # Brightness control (0 means no change)
-    enhanced_image1 = cv2.convertScaleAbs(image, alpha=alpha, beta=beta)
-    st.image(enhanced_image1, caption='Brightness and Contrast Adjustment', use_column_width=True)
+    # # Apply brightness and contrast adjustment
+    # alpha = 1.5  # Contrast control (1.0 means no change)
+    # beta = 30    # Brightness control (0 means no change)
+    # enhanced_image1 = cv2.convertScaleAbs(image, alpha=alpha, beta=beta)
+    # st.image(enhanced_image1, caption='Brightness and Contrast Adjustment', use_column_width=True)
 
-    # Apply Gaussian blur
-    image2 = cv2.GaussianBlur(image, (5, 5), 0)
-    st.image(image2, caption='Smoothing and Blurring (Gaussian Blur)', use_column_width=True)
+    # # Apply Gaussian blur
+    # image2 = cv2.GaussianBlur(image, (5, 5), 0)
+    # st.image(image2, caption='Smoothing and Blurring (Gaussian Blur)', use_column_width=True)
 
-    # Apply sharpening
-    kernel = np.array([[-1, -1, -1],
-                       [-1, 9, -1],
-                       [-1, -1, -1]])
-    sharpened_image = cv2.filter2D(image, -1, kernel)
-    st.image(sharpened_image, caption='Sharpening (Unsharp Masking)', use_column_width=True)
+    # # Apply sharpening
+    # kernel = np.array([[-1, -1, -1],
+    #                    [-1, 9, -1],
+    #                    [-1, -1, -1]])
+    # sharpened_image = cv2.filter2D(image, -1, kernel)
+    # st.image(sharpened_image, caption='Sharpening (Unsharp Masking)', use_column_width=True)
 
-    # Apply color balance adjustment
-    corrected_image = cv2.xphoto.createSimpleWB()
-    corrected_image = corrected_image.balanceWhite(image)
-    st.image(corrected_image, caption='Color Balance Adjustment', use_column_width=True)
+    # # Apply color balance adjustment
+    # corrected_image = cv2.xphoto.createSimpleWB()
+    # corrected_image = corrected_image.balanceWhite(image)
+    # st.image(corrected_image, caption='Color Balance Adjustment', use_column_width=True)
 
 if __name__ == '__main__':
     main()
