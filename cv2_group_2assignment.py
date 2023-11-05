@@ -10,7 +10,7 @@ def main():
     height, width = image.shape[:2]
    else:
     st.error("Failed to load the image or unexpected image shape.")
-    st.stop()  # Stop the script if the image loading fails
+    # st.stop()  # Stop the script if the image loading fails
 
 
     # Define the transformation matrix for different affine transformations
