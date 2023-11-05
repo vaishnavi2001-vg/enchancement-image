@@ -4,11 +4,11 @@ import numpy as np
 
 def main():
    # Load an image
-image = cv2.imread('image5.jpeg')
+   image = cv2.imread('image5.jpeg')
 
-if image is not None:
+   if image is not None:
     height, width = image.shape[:2]
-else:
+   else:
     st.error("Failed to load the image or unexpected image shape.")
     st.stop()  # Stop the script if the image loading fails
 
