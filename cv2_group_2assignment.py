@@ -9,7 +9,6 @@ Original file is located at
 import streamlit as st
 import cv2
 import numpy as np
-# from google.colab.patches import cv2_imshow
 
 # Load an image
 image = cv2.imread('image5.jpeg')
@@ -20,7 +19,6 @@ if image is not None and len(image.shape) >= 2:
 else:
     # Handle the case where image is None or doesn't have the expected shape
     st.error("Failed to load the image or unexpected image shape.")
-
 
 
 # Define the transformation matrix for different affine transformations
